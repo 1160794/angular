@@ -1,0 +1,10 @@
+<h1>Produtos</h1>
+
+<ul>
+  <a class="btn btn-success" href="/produto-details/novo">Criar produto</a>
+  <li *ngFor="let produto of produtos">
+    <a routerLink="/produto-details/{{produto.id}}">{{ produto.nome }}</a>
+    <button (click)="delete(produto)">delete</button>
+  </li>
+</ul>
+

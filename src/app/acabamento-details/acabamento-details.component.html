@@ -1,0 +1,24 @@
+<div *ngIf="acabamento; else create"  class="details">
+    <h3>You selected: {{acabamento.descricao}}. Details:</h3>
+    <table style="width: 100%">  
+            <tr>
+                <td>descricao:</td>
+                <td><input [(ngModel)]="acabamento.descricao" placeholder="nome"></td> 
+            </tr>
+            <tr>
+                <p>Materiais: {{ acabamento.materiais }}</p>
+            </tr>
+            
+          </table> 
+          <button (click)="save()">save</button>
+ </div>
+
+ <ng-template #create class="details">
+    <h3>NOVO ACABAMENTO Details:</h3>
+    <div>
+    <label>Descricao:
+        <input #Descricao />
+      </label><br />
+     <button (click)="add(Descricao.value); Descricao.value='';"> add</button>
+    </div> 
+</ng-template>

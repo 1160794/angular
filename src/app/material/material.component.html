@@ -1,0 +1,8 @@
+<h1>Materiais</h1>
+<ul>
+    <button mat-button> <a routerLink="/material"></a> Criar material</button>
+    <li *ngFor="let material of materiais">
+      <a routerLink="/material-details/{{material.id}}">{{ material.nome }}</a>
+      <button (click)="delete(material)">delete</button>
+    </li>
+</ul>

@@ -1,0 +1,88 @@
+<div *ngIf="encomenda" class="details">
+  <h3>encomenda Details:</h3>
+  
+   
+
+  
+    <li *ngFor="let itens of encomenda.itens">
+      
+        <table style="width: 100%">  
+            <tr>
+             <td>nome: </td>
+             <input [(ngModel)]="itens.produto.nome" placeholder="nome">
+            </tr>
+            <tr>
+                <td>categoria: </td>
+                <input [(ngModel)]="itens.produto.categoria" placeholder="categoria">
+               </tr>
+            <tr>
+            <tr>
+              <td>material: </td>
+              <input [(ngModel)]="itens.produto.material" placeholder="material">
+             </tr>
+             <tr>
+              <td>acabamento: </td>
+              <input [(ngModel)]="itens.produto.acabamento" placeholder="acabamento">
+             </tr>
+             <tr>
+              <td>altura: </td>
+              <input [(ngModel)]="itens.produto.altura" placeholder="altura">
+             </tr>
+             <tr>
+              <td>comprimento: </td>
+              <input [(ngModel)]="itens.produto.comprimento" placeholder="comprimento">
+             </tr>
+             <tr>
+              <td>largura: </td>
+              <input [(ngModel)]="itens.produto.largura" placeholder="largura">
+             </tr>
+             <tr>
+              <td>preco: </td>
+              <input [(ngModel)]="itens.preco" placeholder="preco">
+            </tr>
+           </table>
+           <tr>
+            <h3>ProdutosAgregados:</h3>
+            <li *ngFor="let itens2 of itens.produto.listaDeProdutos">
+                  <tr>
+                   <td>nome: </td>
+                   <input [(ngModel)]="itens2.nome" placeholder="nome">
+                  </tr>
+                  <tr>
+                      <td>categoria: </td>
+                      <input [(ngModel)]="itens2.categoria" placeholder="categoria">
+                     </tr>
+                  <tr>
+                    <td>material: </td>
+                    <input [(ngModel)]="itens2.material" placeholder="material">
+                   </tr>
+                   <tr>
+                    <td>acabamento: </td>
+                    <input [(ngModel)]="itens2.acabamento" placeholder="acabamento">
+                   </tr>
+                   <tr>
+                    <td>altura: </td>
+                    <input [(ngModel)]="itens2.altura" placeholder="altura">
+                   </tr>
+                   <tr>
+                    <td>comprimento: </td>
+                    <input [(ngModel)]="itens2.comprimento" placeholder="comprimento">
+                   </tr>
+                   <tr>
+                    <td>largura: </td>
+                    <input [(ngModel)]="itens2.largura" placeholder="largura">
+                   </tr>
+      
+                  <tr>
+                      <td>listaDeProdutos: </td>
+                      <input [(ngModel)]="itens2.listaDeProdutos" placeholder="listaDeProdutos">
+                    </tr>
+            
+              </li> 
+            </tr>
+              
+      
+    </li> 
+        <button (click)="save()">save</button>
+    
+</div>

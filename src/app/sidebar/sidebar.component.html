@@ -1,0 +1,29 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="" [class.activated]="currentUrl == '/'">
+        <i class="material-icons">supervised_user_circle</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="material" [class.activated]="currentUrl == '/material'">
+        <i>mate</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="acabamento" [class.activated]="currentUrl == '/acabamento'">
+        <i>acab</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="categoria" [class.activated]="currentUrl == '/categoria'">
+        <i>cate</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="encomenda" [class.activated]="currentUrl == '/encomenda'">
+        <i>enc</i>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,23 @@
+label {
+    display: inline-block;
+    width: 20em;
+    margin: .5em 0;
+    color: #607D8B;
+    font-weight: bold;
+  }
+  input {
+    height: 2em;
+    width: 70em;
+    font-size: 1em;
+    padding-left: .4em;
+  }
+
+  .details {  
+    background: mediumseagreen;
+    color: white;
+    padding: 0.5em;
+    margin: 1em;        
+    max-width: 100em;  
+    text-align: left;
+    font-size: 0.875em; /* 14px/16=0.875em */
+}

@@ -1,0 +1,97 @@
+<div *ngIf="produto; else create"  class="details">
+    <h3>You selected: {{produto.nome}}. Details:</h3>
+    <table style="width: 100%">            
+        <tr>
+            <td>nome:</td>
+            <input [(ngModel)]="produto.nome" placeholder="nome">
+        </tr>
+        <tr>
+            <td>altura: </td>
+            <input [(ngModel)]="produto.altura" placeholder="altura">    
+        </tr>
+        <tr>
+            <td>largura: </td>
+            <input [(ngModel)]="produto.largura" placeholder="largura">    
+        </tr>
+        <tr>
+            <td>comprimento: </td>
+            <input [(ngModel)]="produto.comprimento" placeholder="comprimento">    
+        </tr>
+        <tr>
+            <td>minOcupacao: </td>
+            <input [(ngModel)]="produto.minOcupacao" placeholder="minOcupacao">    
+        </tr>
+        <tr>
+            <td>maxOcupacao: </td>
+            <input [(ngModel)]="produto.maxOcupacao" placeholder="maxOcupacao">    
+        </tr>
+
+        
+
+    </table> 
+    
+    <li *ngFor="let produtosAgregado of produto.produtosAgregados">
+        <tr>
+        <td>nomeProduto: </td>
+        <input [(ngModel)]="produtosAgregado.nome" placeholder="nome">
+        </tr>
+        <tr>
+            <td>agregadoTF: </td>
+            <input [(ngModel)]="produtosAgregado.agregadoTF" placeholder="agregadoTF">
+        </tr>
+    
+    </li> 
+    <li *ngFor="let material of produto.material">
+        <tr>
+        <td>material: </td>
+        <input [(ngModel)]="material.nome" placeholder="nome">
+      </tr>
+        <li *ngFor="let acabamento of material.acabamentos">
+      <tr>
+           <p>acabamento: {{ acabamento.descricao }}
+          </tr>
+        </li>  
+    
+    </li> 
+    <button (click)="save()">save</button>
+</div>
+
+
+<ng-template #create class="details">
+    <h3>NOVO Produto Details:</h3>
+    <div>
+    <label>nome:
+        <input #nome />
+    </label><br />
+    <label>categoria:
+        <input #categoria />
+    </label><br />
+    <label>materiais/acabamentos:
+        <input #Materiais />
+    </label><br />
+    <label>altura:
+        <input #altura />
+    </label><br />
+    <label>largura:
+        <input #largura />
+    </label><br />
+    <label>comprimento:
+        <input #comprimento />
+    </label><br />
+    <label>maxOcupacao:
+        <input #maxOcupacao />
+    </label><br />
+    <label>minOcupacao:
+        <input #minOcupacao />
+    </label><br />
+    <label>produtosAgregados:
+        <input #proAgre />
+    </label><br />
+
+
+     <button (click)="add(nome.value,categoria.value,altura.value,largura.value,
+     comprimento.value,maxOcupacao.value,minOcupacao.value,Materiais.value,proAgre.value); 
+     nome.value=''; categoria.value='';altura.value='';largura.value='';
+     comprimento.value='';maxOcupacao.value='';minOcupacao.value='';Materiais.value='';proAgre.value='';"> add</button>
+    </div> 
+</ng-template>

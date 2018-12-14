@@ -1,0 +1,19 @@
+<div *ngIf="material" class="details">
+    <h3>You selected: {{material.nome}}. Details:</h3>
+    <table style="width: 100%">  
+            <tr>
+                <td>nome:</td>
+                <input [(ngModel)]="material.nome" placeholder="nome">
+            </tr>
+          </table>
+
+          <li *ngFor="let acabamento of material.acabamentos">
+              <tr>
+                   <td>acabamento: </td>
+                   <input [(ngModel)]="acabamento.descricao" placeholder="descricao">
+                  </tr>
+        </li>
+
+          <button (click)="save()">save</button>
+      
+ </div>

@@ -1,0 +1,8 @@
+<h1>Encomendas</h1>
+<ul>
+    <button mat-button> <a routerLink="/encomenda"></a> Criar encomenda</button>
+    <li *ngFor="let encomenda of encomendas">
+      <a routerLink="/encomenda-details/{{encomenda._id}}">{{ encomenda._id }}</a>
+      <button (click)="delete(encomenda)">delete</button>
+    </li>
+</ul>

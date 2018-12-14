@@ -1,0 +1,21 @@
+<div *ngIf="categoria; else create"  class="details">
+
+    <h3>You selected: {{categoria.descricao}}. Details:</h3>
+    <table style="width: 100%">  
+            <tr>
+                <td>descricao:</td>
+                <td><input [(ngModel)]="categoria.descricao" placeholder="nome"></td> 
+            </tr>
+          </table> 
+          <button (click)="save()">save</button>
+ </div>
+
+ <ng-template #create class="details">
+    <h3>NOVO Categoria Details:</h3>
+    <div>
+    <label>Descricao:
+        <input #descricao />
+      </label><br />
+     <button (click)="add(descricao.value); descricao.value='';"> add</button>
+    </div> 
+</ng-template>

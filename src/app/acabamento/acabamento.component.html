@@ -1,0 +1,8 @@
+<h1>Acabamentos</h1>
+<ul>
+    <a class="btn btn-success" href="/acabamento-details/novo">Criar acabamento</a>
+    <li *ngFor="let acabamento of acabamentos">
+      <a routerLink="/acabamento-details/{{acabamento.id}}">{{ acabamento.descricao }}</a>
+      <button (click)="delete(acabamento)">delete</button>
+    </li>
+</ul>
